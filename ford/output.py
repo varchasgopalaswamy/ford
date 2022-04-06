@@ -249,7 +249,7 @@ class Documentation(object):
                 shutil.copy(src.path, os.path.join(out_dir, "src", src.name))
 
         if "mathjax_config" in self.data:
-            os.mkdir(os.path.join(out_dir, "js", "MathJax-config"))
+            os.makedirs(os.path.join(out_dir, "js", "MathJax-config"),exist_ok=True)
             shutil.copy(
                 self.data["mathjax_config"],
                 os.path.join(
